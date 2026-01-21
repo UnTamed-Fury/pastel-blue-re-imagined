@@ -1,5 +1,5 @@
 {
-  "name": "Pastel Blue Re-Imagined - Light (Superior)",
+  "name": "Pastel Blue Re-Imagined - Light",
   "description": "A completely reimagined blue theme with superior color harmony",
   "version": "2",
   "authors": [
@@ -28,7 +28,7 @@
       "#f0f3f6"
     ],
     "BACKGROUND_TERTIARY": [
-      "#ebedf0"
+      "#edf0f3"
     ],
     "BACKGROUND_FLOATING": [
       "#ffffff"
@@ -76,7 +76,7 @@
       "#0d1117"
     ],
     "INTERACTIVE_HOVER": [
-      "#316dcb"
+      "#217dbb"
     ],
     "INTERACTIVE_MUTED": [
       "#656d76"
@@ -109,13 +109,13 @@
       "#0000000a"
     ],
     "CARD_PRIMARY_BG": [
-      "#ffffff"
+      "#f8fafc"
     ],
     "CARD_SECONDARY_BG": [
-      "#f6f8fa"
+      "#f0f4f8"
     ],
     "EMBED_BACKGROUND": [
-      "#f6f8fa"
+      "#f8fafc"
     ],
     "BORDER_FAINT": [
       "#0000000a"

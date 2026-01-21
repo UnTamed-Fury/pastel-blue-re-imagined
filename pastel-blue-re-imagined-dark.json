@@ -1,5 +1,5 @@
 {
-  "name": "Pastel Blue Re-Imagined - Dark (Superior)",
+  "name": "Pastel Blue Re-Imagined - Dark",
   "description": "A completely reimagined blue theme with superior color harmony",
   "version": "2",
   "authors": [
@@ -11,7 +11,7 @@
   "plus": {
     "version": "0",
     "iconPack": "rosiecord-plumpy",
-    "mentionLineColor": "#0969da"
+    "mentionLineColor": "#58a6ff"
   },
   "spec": 2,
   "semanticColors": {
@@ -28,7 +28,7 @@
       "#12161d"
     ],
     "BACKGROUND_TERTIARY": [
-      "#0a0d13"
+      "#10151b"
     ],
     "BACKGROUND_FLOATING": [
       "#1c2128"
@@ -76,7 +76,7 @@
       "#d1e0ff"
     ],
     "INTERACTIVE_HOVER": [
-      "#4285f4"
+      "#4a90e2"
     ],
     "INTERACTIVE_MUTED": [
       "#7a92b8"
@@ -109,13 +109,13 @@
       "#ffffff14"
     ],
     "CARD_PRIMARY_BG": [
-      "#11151b"
+      "#13181f"
     ],
     "CARD_SECONDARY_BG": [
-      "#141920"
+      "#151a21"
     ],
     "EMBED_BACKGROUND": [
-      "#12161d"
+      "#13181f"
     ],
     "BORDER_FAINT": [
       "#ffffff14"
