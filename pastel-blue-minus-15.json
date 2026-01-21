@@ -209,6 +209,9 @@
     ],
     "AUTOMOD_QUEUED_FOR_REVIEW_BACKGROUND_HOVER": [
       "#f5b14d4d"
+    ],
+    "BACKGROUND_ACCENT_ALT": [
+      "#3ea7dd"
     ]
   },
   "rawColors": {
