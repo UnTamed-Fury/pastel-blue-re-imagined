@@ -1,5 +1,5 @@
 {
-  "name": "Pastel Blue Re-Imagined - Dark",
+  "name": "Pastel Blue Re-Imagined - Dark (Enhanced)",
   "description": "A completely re-imagined blue theme designed for optimal viewing",
   "version": "2",
   "authors": [
@@ -16,10 +16,10 @@
   "spec": 2,
   "semanticColors": {
     "CHAT_BACKGROUND": [
-      "#0a0e18"
+      "#0b0f1a"
     ],
     "BACKGROUND_PRIMARY": [
-      "#0a0e18"
+      "#0b0f1a"
     ],
     "BACKGROUND_SECONDARY": [
       "#121826"
@@ -37,7 +37,7 @@
       "#0d121f"
     ],
     "BACKGROUND_MOBILE_PRIMARY": [
-      "#0a0e18"
+      "#0b0f1a"
     ],
     "BACKGROUND_MOBILE_SECONDARY": [
       "#121826"
@@ -145,7 +145,7 @@
       "#f05d6e"
     ],
     "STATUS_DANGER_TEXT": [
-      "#0a0e18"
+      "#0b0f1a"
     ],
     "REDESIGN_BUTTON_DANGER_BACKGROUND": [
       "#f05d6e"
@@ -157,7 +157,7 @@
       "#000000b2"
     ],
     "HOME_BACKGROUND": [
-      "#0a0e18"
+      "#0b0f1a"
     ],
     "CHANNELTEXTAREA_BACKGROUND": [
       "#121826"
@@ -293,14 +293,14 @@
     "PLUM_13": "#a5b8e8",
     "PLUM_15": "#3a7bff",
     "PLUM_16": "#e8f0ff",
-    "PLUM_17": "#0a0e18",
+    "PLUM_17": "#0b0f1a",
     "PLUM_18": "#0f1420",
     "PLUM_19": "#e8f0ff",
-    "PLUM_20": "#0a0e18",
+    "PLUM_20": "#0b0f1a",
     "PLUM_21": "#e8f0ff",
     "PLUM_22": "#e8f0ff",
-    "PLUM_24": "#0a0e18",
-    "PLUM_25": "#0a0e18",
+    "PLUM_24": "#0b0f1a",
+    "PLUM_25": "#0b0f1a",
     "PRIMARY_100": "#a5b8e8",
     "PRIMARY_200": "#e2eefd",
     "PRIMARY_300": "#3a7bff",
@@ -310,7 +310,7 @@
     "PRIMARY_460": "#e8f0ff",
     "PRIMARY_500": "#3a7bff",
     "PRIMARY_530": "#3a7bff",
-    "PRIMARY_600": "#0a0e18",
+    "PRIMARY_600": "#0b0f1a",
     "PRIMARY_630": "#e8f0ff",
     "PRIMARY_645": "#0f1420",
     "PRIMARY_660": "#e8f0ff",
