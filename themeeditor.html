@@ -3,17 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Theme Studio — Mobile (Alpha)</title>
+<title>Pastel Blue Theme Editor</title>
 <style>
   :root{
-    /* Live palette (overridden by JS) */
-    --brand:#8200c8; --brandHover:#3d007a; --link:#8200c8;
-    --text:#cbadff; --muted:#d359ff; --textPrimary:#e9d9ff; --textSecond:#d79dff;
-    --bgPrimary:#0f0f10; --bgSecondary:#121214; --bgAlt:#101012; --bgTertiary:#0c0c0e; --bgFloating:#0f0f12; --bgNested:#0e0e10;
-    --cardPrimary:#0e0e10; --cardSecondary:#0f0f12; --input:#121214;
-    --success:#43b581; --warning:#faa61a; --danger:#7f007b;
-    --ripple:#5b2a82; --scrollbar:#2b2b2b; --mentionLine:#b592e6;
-    --icon:#cbadff; --iconMuted:#8a8a8a;
+    /* CSS variables will be populated by JS from JSON */
   }
   *{box-sizing:border-box}
   html,body{height:100%;margin:0;background:var(--bgPrimary);color:var(--text);font:14px/1.45 Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
@@ -167,9 +160,7 @@
       <div class="toolbar">
         <label class="toggle"><input type="checkbox" id="hoverMode"> Hover mode</label>
         <label class="toggle"><input type="checkbox" id="showAll"> Show all controls</label>
-        <button id="presetPurple" class="primary">Purple Vision</button>
-        <button id="presetBlue">Cobalt Vision</button>
-        <button id="loadLocal" class="ghost">Load Local</button>
+        <button id="loadLocal" class="primary">Load Local</button>
       </div>
 
       <div id="controls"></div>
@@ -295,67 +286,8 @@
                   <div class="navBtn active"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9H6v-9H3z"/></svg>Home</div>
                   <div class="navBtn"><svg class="icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zM16 13c-.29 0-.62.02-.97.05 1.16.84 1.97 1.92 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>Friends</div>
                   <div class="navBtn"><svg class="icon" viewBox="0 0 24 24"><path d="M12 8a4 4 0 104 4 4 4 0 00-4-4zm0-6a2 2 0 012 2v2a2 2 0 01-4 0V4a2 2 0 012-2zM4 12a2 2 0 012-2h2a2 2 0 010 4H6a2 2 0 01-2-2zm12 6a2 2 0 012-2h2a2 2 0 010 4h-2a2 2 0 01-2-2zM4 20a2 2 0 012-2h2a2 2 0 010 4H6a2 2 0 01-2-2z"/></svg>Activity</div>
-                  <div class="navBtn"><svg class="icon" viewBox="0 0 24 24"><path d="M19.14 12.94a7 7 0 00.06-1l2.11-1.65a.5.5 0 00.12-.64l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.14 7.14 0 00-1.73-1l-.38-2.65A.5.5 0 0013.7 2h-3.4a.5.5 0 00-.5.43l-.38 2.65a7.14 7.14 0 00-1.73 1l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.64L4.8 11a7 7 0 000 2l-2.11 1.65a.5.5 0 00-.12.64l2 3.46a.5.5 0 00.6.22l2.49-1a7.14 7.14 0 001.73 1l.38 2.65a.5.5 0 00.5.43h3.4a.5.5 0 00.5-.43l.38-2.65a7.14 7.14 0 001.73-1l2.49 1a.5.5 0 00.6-.22l2-3.46a.5.5 0 00-.12-.64zM12 15.5A3.5 3.5 0 1115.5 12 3.5 3.5 0 0112 15.5z"/></svg>Settings</div>
+                  <div class="navBtn"><svg class="icon" viewBox="0 0 24 24"><path d="M19.14 12.94a7 7 0 00.06-1l2.11-1.65a.5.5 0 00.12-.64l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.14 7.14 0 00-1.73-1l-.38-2.65A.5.5 0 0013.7 2h-3.4a.5.5 0 00-.5.43l-.38 2.65a7.14 7.14 0 00-1.73 1l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.64L4.8 11a7 7 0 000 2l-2.11 1.65a.5.5 0 00-.12.64l2 3.46a.5.5 0 00.6.22l2.49-1a7.14 7.14 0 001.73 1l.38 2.65a.5.5 0 00.5.43h3.4a.5.5 0 00.5-.43l.38-2.65a7.14 7.14 0 001.73-1l2.49 1a.5.5 0 00.6-.22l2-3.46a.5.5 0 00-.12-.64zM12 15.5A3.5 3.5 0 1115.5 12 3.5 3.5 0 0112 15.5z"/></svg></div>
                 </div>
-              </div>
-            </div>
-
-            <!-- USERS -->
-            <div class="view" data-view="users">
-              <div class="rail">
-                <div class="server">A</div><div class="server">+</div><div class="server">B</div>
-              </div>
-              <div class="scroll">
-                <div class="topbar">
-                  <div class="titlebar">Members</div>
-                  <div class="icons"><div class="iconBtn"><svg class="icon" viewBox="0 0 24 24"><path d="M12 8a4 4 0 104 4 4 4 0 00-4-4z"/></svg></div></div>
-                </div>
-
-                <!-- Themes+ info row -->
-                <div class="row themesplus-bar">
-                  <div class="ava ava-overlay"></div>
-                  <div>
-                    <div class="name">Icon Pack: <span id="packName">rosiecord-plumpy</span></div>
-                    <div class="subtxt">Overlays: <span id="overlayState">enabled</span> • Mention → <span class="mention">@you</span></div>
-                  </div>
-                  <button class="pill" id="showToastBtn" type="button">Toast</button>
-                </div>
-
-                <div class="row"><div class="ava"></div><div><div class="name">Member One</div><div class="subtxt">Online • @Role</div></div><div class="pill">MOD</div></div>
-                <div class="row"><div class="ava"></div><div><div class="name">Member Two</div><div class="subtxt">Idle • @Role</div></div><div class="pill">VIP</div></div>
-                <div class="row"><div class="ava"></div><div><div class="name">Member Three</div><div class="subtxt">Offline • @Role</div></div><div class="pill">GUEST</div></div>
-              </div>
-            </div>
-
-            <!-- CHANNELS -->
-            <div class="view" data-view="channels">
-              <div class="rail">
-                <div class="server">A</div><div class="server">+</div><div class="server">B</div>
-              </div>
-              <div class="scroll">
-                <div class="topbar">
-                  <div class="titlebar">Channels</div>
-                  <div class="icons"><div class="iconBtn"><svg class="icon" viewBox="0 0 24 24"><path d="M15 3H9v4H5v6h4v4h6v-4h4V7h-4z"/></svg></div></div>
-                </div>
-                <div class="row chanRow"><div class="hash">#</div><div><div class="name">general</div><div class="subtxt">Category • Server</div></div><div class="pill">NEW</div></div>
-                <div class="row chanRow"><div class="hash">#</div><div><div class="name">random</div><div class="subtxt">Category • Server</div></div><div class="pill">5</div></div>
-                <div class="row chanRow"><div class="hash">#</div><div><div class="name">media</div><div class="subtxt">Category • Server</div></div><div class="pill">•</div></div>
-              </div>
-            </div>
-
-            <!-- SETTINGS -->
-            <div class="view" data-view="settings">
-              <div class="rail">
-                <div class="server">A</div><div class="server">+</div><div class="server">B</div>
-              </div>
-              <div class="scroll">
-                <div class="topbar">
-                  <div class="titlebar">Settings</div>
-                  <div class="icons"><div class="iconBtn"><svg class="icon" viewBox="0 0 24 24"><path d="M19.14 12.94a7 7 0 00.06-1l2.11-1.65a.5.5 0 00.12-.64l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.14 7.14 0 00-1.73-1l-.38-2.65A.5.5 0 0013.7 2h-3.4a.5.5 0 00-.5.43l-.38 2.65a7.14 7.14 0 00-1.73 1l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.64L4.8 11a7 7 0 000 2l-2.11 1.65a.5.5 0 00-.12.64l2 3.46a.5.5 0 00.6.22l2.49-1a7.14 7.14 0 001.73 1l.38 2.65a.5.5 0 00.5.43h3.4a.5.5 0 00.5-.43l.38-2.65a7.14 7.14 0 001.73-1l2.49 1a.5.5 0 00.6-.22l2-3.46a.5.5 0 00-.12-.64zM12 15.5A3.5 3.5 0 1115.5 12 3.5 3.5 0 0112 15.5z"/></svg></div></div>
-                </div>
-                <div class="row"><div class="ava"></div><div><div class="name">Cards</div><div class="subtxt">Floating, borders</div></div><div class="pill">UI</div></div>
-                <div class="row"><div class="ava"></div><div><div class="name">Buttons</div><div class="subtxt">Brand, hover</div></div><div class="pill">OK</div></div>
-                <div class="row"><div class="ava"></div><div><div class="name">Scrollbars</div><div class="subtxt">Thin / auto thumb</div></div><div class="pill">FX</div></div>
               </div>
             </div>
 
@@ -366,37 +298,6 @@
   </div>
 
 <script>
-/* ============== Presets ============== */
-const PRESETS = {
-  purple:{
-    meta:{name:"Purple Vision (Alpha Mobile)",desc:"Crisp purple accents on a deep dark UI.",version:"3",author:{name:"Your Name",id:"000000000000000000"}},
-    palette:{brand:"#8200c8",brandHover:"#3d007a",link:"#8200c8",
-      text:"#cbadff",muted:"#d359ff",textPrimary:"#e9d9ff",textSecond:"#d79dff",
-      bgPrimary:"#0f0f10",bgSecondary:"#121214",bgAlt:"#101012",bgTertiary:"#0c0c0e",bgFloating:"#0f0f12",bgNested:"#0e0e10",
-      cardPrimary:"#0e0e10",cardSecondary:"#0f0f12",input:"#121214",
-      success:"#43b581",warning:"#faa61a",danger:"#7f007b",ripple:"#5b2a82",scrollbar:"#2b2b2b",mentionLine:"#b592e6"},
-    plus:{iconPack:"rosiecord-plumpy",customOverlays:true}
-  },
-  cobalt:{
-    meta:{name:"Cobalt Vision (Alpha Mobile)",desc:"Azure/cobalt accents, dark everything.",version:"3",author:{name:"Your Name",id:"000000000000000000"}},
-    palette:{brand:"#2ea8ff",brandHover:"#166dce",link:"#2ea8ff",
-      text:"#d6e8ff",muted:"#a8c6ff",textPrimary:"#e7f1ff",textSecond:"#b9d4ff",
-      bgPrimary:"#0f0f10",bgSecondary:"#121214",bgAlt:"#101012",bgTertiary:"#0c0c0e",bgFloating:"#0f0f12",bgNested:"#0e0e10",
-      cardPrimary:"#0e0e10",cardSecondary:"#0f0f12",input:"#121214",
-      success:"#43b581",warning:"#f5b14d",danger:"#e04f5f",ripple:"#2a5d9c",scrollbar:"#2b2b2b",mentionLine:"#8ecbff"},
-    plus:{iconPack:"rosiecord-plumpy",customOverlays:true}
-  },
-  default:{
-    meta:{name:"Default Dark",desc:"Safe starter preset.",version:"1",author:{name:"Your Name",id:"000000000000000000"}},
-    palette:{brand:"#5865f2",brandHover:"#4450d8",link:"#5865f2",
-      text:"#e6e6e6",muted:"#aaaaaa",textPrimary:"#ffffff",textSecond:"#cfcfcf",
-      bgPrimary:"#2b2d31",bgSecondary:"#232428",bgAlt:"#1e1f22",bgTertiary:"#1a1b1e",bgFloating:"#2b2d31",bgNested:"#1e1f22",
-      cardPrimary:"#1e1f22",cardSecondary:"#2b2d31",input:"#1e1f22",
-      success:"#3ba55d",warning:"#faa61a",danger:"#ed4245",ripple:"#3a3d43",scrollbar:"#3a3d43",mentionLine:"#7aa0ff"},
-    plus:{iconPack:"default",customOverlays:false}
-  }
-};
-
 /* ============== Field sets by view (context-aware) ============== */
 const FIELDS = {
   meta:[
@@ -463,7 +364,7 @@ const A = v => [v];
 
 let activeView = 'chat';
 let showAll = false;
-let state = JSON.parse(JSON.stringify(PRESETS.purple)); // deep clone
+let state = { meta: {}, palette: {}, plus: {} };
 
 /* ============== Controls rendering ============== */
 const controls = document.getElementById('controls');
@@ -537,8 +438,6 @@ function populateFromState(){
   buildJSON();
 }
 
-function setPreset(key){ state = JSON.parse(JSON.stringify(PRESETS[key])); applyPalette(state.palette); renderControls(); buildJSON(); }
-
 /* ============== Inputs ============== */
 function wireInputs(){
   // meta
@@ -572,12 +471,15 @@ function wireInputs(){
 }
 
 /* ============== Load Local Helper ============== */
-document.getElementById('loadLocal').onclick = async () => {
+async function loadLocalTheme() {
   try {
     const res = await fetch('./pastel-blue-re-imagined-dark.json');
     if(!res.ok) throw new Error('Failed to load local JSON');
     const data = await res.json();
     
+    // Reset state
+    state = { meta: {}, palette: {}, plus: {} };
+
     // Auto-map loaded JSON to internal state
     state.meta.name = data.name || state.meta.name;
     state.meta.desc = data.description || state.meta.desc;
@@ -588,6 +490,8 @@ document.getElementById('loadLocal').onclick = async () => {
     const pick = k => (data.semanticColors[k] && data.semanticColors[k][0]) || null;
     const map = {
         brand: 'TEXT_LINK',
+        brandHover: 'TEXT_LINK', // Fallback
+        link: 'TEXT_LINK',
         text: 'TEXT_NORMAL', 
         muted: 'TEXT_MUTED',
         textPrimary: 'TEXT_PRIMARY',
@@ -602,7 +506,10 @@ document.getElementById('loadLocal').onclick = async () => {
         cardSecondary: 'CARD_SECONDARY_BG',
         input: 'CHANNELTEXTAREA_BACKGROUND',
         success: 'STATUS_DANGER', // Not quite, but illustrative mapping
-        danger: 'STATUS_DANGER'
+        danger: 'STATUS_DANGER',
+        warning: 'STATUS_DANGER', // Fallback
+        ripple: 'ANDROID_RIPPLE',
+        scrollbar: 'SCROLLBAR_THIN_THUMB'
     };
     
     Object.entries(map).forEach(([editorKey, jsonKey]) => {
@@ -617,11 +524,13 @@ document.getElementById('loadLocal').onclick = async () => {
     updateThemesPlusIndicators();
     renderControls();
     buildJSON();
-    alert('Loaded pastel-blue-re-imagined-dark.json');
+    console.log('Loaded pastel-blue-re-imagined-dark.json');
   } catch(e) {
     alert('Error loading local file: ' + e.message);
   }
-};
+}
+
+document.getElementById('loadLocal').onclick = loadLocalTheme;
 
 /* ============== JSON Builder (spec:2 + plus) ============== */
 function buildJSON(){
@@ -780,7 +689,7 @@ document.getElementById('showAll').addEventListener('change', e=>{
 
 document.getElementById('presetPurple').onclick=()=>setPreset('purple');
 document.getElementById('presetBlue').onclick=()=>setPreset('cobalt');
-document.getElementById('presetDefault').onclick=()=>setPreset('default');
+document.getElementById('loadLocal').onclick = loadLocalTheme;
 
 document.getElementById('import').onclick=()=>{
   const input=document.createElement('input'); input.type='file'; input.accept='.json,application/json';
@@ -841,11 +750,8 @@ document.addEventListener('click', e=>{
   }
 });
 
-/* Init */
-renderControls();
-applyPalette(state.palette);
-updateThemesPlusIndicators();
-buildJSON();
+/* Init: Load local JSON immediately */
+loadLocalTheme();
 </script>
 </body>
 </html>
