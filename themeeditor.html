@@ -169,7 +169,7 @@
         <label class="toggle"><input type="checkbox" id="showAll"> Show all controls</label>
         <button id="presetPurple" class="primary">Purple Vision</button>
         <button id="presetBlue">Cobalt Vision</button>
-        <button id="presetDefault" class="ghost">Default Dark</button>
+        <button id="loadLocal" class="ghost">Load Local</button>
       </div>
 
       <div id="controls"></div>
@@ -570,6 +570,58 @@ function wireInputs(){
     };
   });
 }
+
+/* ============== Load Local Helper ============== */
+document.getElementById('loadLocal').onclick = async () => {
+  try {
+    const res = await fetch('./pastel-blue-re-imagined-dark.json');
+    if(!res.ok) throw new Error('Failed to load local JSON');
+    const data = await res.json();
+    
+    // Auto-map loaded JSON to internal state
+    state.meta.name = data.name || state.meta.name;
+    state.meta.desc = data.description || state.meta.desc;
+    state.meta.version = data.version || state.meta.version;
+    if(Array.isArray(data.authors) && data.authors[0]) state.meta.author = {name:data.authors[0].name||'', id:data.authors[0].id||''};
+    
+    // Map semantic keys to editor keys
+    const pick = k => (data.semanticColors[k] && data.semanticColors[k][0]) || null;
+    const map = {
+        brand: 'TEXT_LINK',
+        text: 'TEXT_NORMAL', 
+        muted: 'TEXT_MUTED',
+        textPrimary: 'TEXT_PRIMARY',
+        textSecond: 'TEXT_SECONDARY',
+        bgPrimary: 'BACKGROUND_PRIMARY',
+        bgSecondary: 'BACKGROUND_SECONDARY',
+        bgAlt: 'BACKGROUND_SECONDARY_ALT',
+        bgTertiary: 'BACKGROUND_TERTIARY',
+        bgFloating: 'BACKGROUND_FLOATING',
+        bgNested: 'BACKGROUND_NESTED_FLOATING',
+        cardPrimary: 'CARD_PRIMARY_BG',
+        cardSecondary: 'CARD_SECONDARY_BG',
+        input: 'CHANNELTEXTAREA_BACKGROUND',
+        success: 'STATUS_DANGER', // Not quite, but illustrative mapping
+        danger: 'STATUS_DANGER'
+    };
+    
+    Object.entries(map).forEach(([editorKey, jsonKey]) => {
+        const val = pick(jsonKey);
+        if(val) state.palette[editorKey] = val;
+    });
+    
+    // Explicit mention line override if present
+    if(data.plus?.mentionLineColor) state.palette.mentionLine = data.plus.mentionLineColor;
+
+    applyPalette(state.palette);
+    updateThemesPlusIndicators();
+    renderControls();
+    buildJSON();
+    alert('Loaded pastel-blue-re-imagined-dark.json');
+  } catch(e) {
+    alert('Error loading local file: ' + e.message);
+  }
+};
 
 /* ============== JSON Builder (spec:2 + plus) ============== */
 function buildJSON(){
